@@ -6,3 +6,191 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  /* so if we add margin it won't be added to the total width or height*/
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /* Boldness of a color */
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777;
+  /* This is inhereted through all the children's */
+  padding: 30px;
+}
+
+.header {
+  position: relative;
+  height: 95vh;
+  background-image: linear-gradient(to bottom right, rgba(126, 213, 111, 0.8),
+      rgba(40, 180, 131, 0.8)), url("../img/hero.jpg");
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /* This works that all other points are relative to the first point in (x , y) co-ordinates */
+  /* We used viewport height (75vh) to keep our website responsive!!! */
+}
+
+.logo-box {
+  position: absolute;
+  /* The position of the element is absolute and should be absloute to its parent element and we do that by assigning the position attribute in the parent element to relative. In this case the parent element is the header */
+  top: 40px;
+  left: 40px;
+}
+
+.logo {
+  height: 35px;
+  /*The wdith will be automatically adjusted according to our set height and it works the other way around */
+}
+
+.text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  /* Since our button is an inline-block it will be treated as a text so "text-align" property will align the button to the center of the text-box element */
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  /*
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  This properity is used when we need to hide the backface ('backside') of the animated element if the animation will show it.
+  example is when we rotate an element. Using "Can I use" website it says that the backward visibility properity is not supported in Safari so we need to use the -webkit- option.
+  */
+  margin-bottom: 60px;
+}
+
+.heading-primary-main {
+  display: block;
+  /* We made the two span elements to be block so each on will take its own 100% of the width of that block */
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 35px;
+  animation: moveInLeft 1s ease-out;
+  /* It's just shortend CSS properity
+      animation-name: moveInLeft;
+      animation-duration: 1s;
+      animation-timing-function: ease-out;
+  */
+  /* another important animation properities 
+      animation-delay: 1s;
+      animation-iteration-count: 3;
+  */
+}
+
+.heading-primary-sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 17.5px;
+  animation: moveInRight 1s ease-out;
+}
+
+/* For the best browser optimization we should only animate('in @keyframes') properitytwo properities which are: Opacity and Transform. */
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  80% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  80% {
+    transform: translateX(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.btn:link, 
+.btn:visited{
+  position: relative;
+  /*We specify the position to be relative for the ::after pseduo element to not be relative to the .text-box element and to be of the .btn itself instead */
+  text-transform: uppercase;
+  text-decoration: none;
+  display:inline-block;
+  /*By default its an inline element so we need to change it to inline-block so we can apply padding and margin to the element. */
+  padding: 15px 40px;
+  border-radius: 100px;
+  transition: all .2s;
+}
+.btn-animated{
+  animation: moveInBottom .5s ease-out .75s;
+  animation-fill-mode: backwards;
+  /*animation-fill-mode properity specifies how the animation will be executed. */
+  /*animation-fill-mode: backwards means that the 0% animation will be applied to the element before the whole animation executes */
+}
+.btn:hover{
+  transform: translateY(-3px);
+  box-shadow: 0px 20px 10px rgba(0 , 0 , 0 , .2);
+  /*box-shadow: x-axies y-axies blur color(with opacity if needed) */
+}
+.btn:active{
+  transform:translateY(-1px);
+  /* This translate will happen in relation to the main btn position and not the hovered position. */
+  box-shadow: 0px 10px 5px rgba(0 , 0 , 0 , .2);
+}
+.btn-white{
+  background-color: #fff;
+  color: #777;
+}
+.btn::after{
+  /*The ::after pseduo element add a virtual element right behind the element that its targeting and its treated as its child*/
+  /*These properities are just needed to specify the ::after pseduo element based on its parent('Targeted element') in our case .btn */
+  content: ""; /* ::after always needs a content properity even if we leaves it empty */
+  /*These preporites are to match its parent element */  
+  display: inline-block; 
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s;
+}
+.btn-white::after{
+  background-color: #fff;
+}
+.btn:hover::after{
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+  /* We used opacity 0 for the ::after element to fade out and in */
+}
+@keyframes moveInBottom{
+  0%{
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100%{
+    opacity: 1;
+    transform: translate(0);
+  }
+}
