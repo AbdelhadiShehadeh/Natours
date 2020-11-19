@@ -1,0 +1,63 @@
+.btn {
+  &:link,
+  &:hover {
+    font-size: 1.6rem;
+    position: relative;
+    /*We specify the position to be relative for the ::after pseduo element to not be relative to the .text-box element and to be of the .btn itself instead */
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    /*By default its an inline element so we need to change it to inline-block so we can apply padding and margin to the element. */
+    padding: 1.5rem 4rem;
+    border-radius: 10rem;
+    transition: all 0.2s;
+  }
+
+  &::after {
+    /*The ::after pseduo element add a virtual element right behind the element that its targeting and its treated as its child*/
+    /*These properities are just needed to specify the ::after pseduo element based on its parent('Targeted element') in our case .btn */
+    content: "";
+    /* ::after always needs a content properity even if we leaves it empty */
+    /*These preporites are to match its parent element */
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+  }
+  &--animated {
+    animation: moveInBottom 0.5s ease-out 0.75s;
+    animation-fill-mode: backwards;
+    /*animation-fill-mode properity specifies how the animation will be executed. */
+    /*animation-fill-mode: backwards means that the 0% animation will be applied to the element before the whole animation executes */
+  }
+  &:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0rem 2rem 1rem rgba($color-black, 0.2);
+    /*box-shadow: x-axies y-axies blur color(with opacity if needed) */
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+      /* We used opacity 0 for the ::after element to fade out and in */
+    }
+  }
+
+  &:active {
+    transform: translateY(-0.1rem);
+    /* This translate will happen in relation to the main btn position and not the hovered position. */
+    box-shadow: 0rem 1rem 0.5rem rgba($color-black, 0.2);
+  }
+
+  &--white {
+    background-color: $color-white;
+    color: $color-gray-dark;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+}

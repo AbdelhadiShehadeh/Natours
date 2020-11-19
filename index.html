@@ -1,32 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!-- <link rel="stylesheet" href="css/icon-font.css"> -->
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="shortcut icon" type="image/png" href="img/favicon.png">
-        
-        <title>Natours | Exciting tours for adventurous people</title>
-    </head>
-    <body>
-        <header class="header">
-            <!-- Since the logo will be in its own block element we wrap it with div -->
-            <div class="logo-box">
-                <img src="img/logo-white.png" alt="Logo" class="logo" >
-            </div>
-            <div class="text-box">
-                <!--We put the two line in heading h1 for better SEO optimization-->
-                <h1 class="heading-primary">
-                    <span class="heading-primary-main">Outdoors</span>
-                    <span class="heading-primary-sub">Is where life happens</span>
-                </h1>
-                <a href="#" class="btn btn-white btn-animated">Discover our tours</a>
-            </div>
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900"
+      rel="stylesheet"
+    />
 
-        </header>
-    </body>
+    <!-- <link rel="stylesheet" href="css/icon-font.css"> -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+
+    <title>Natours | Exciting tours for adventurous people</title>
+  </head>
+  <body>
+    <header class="header">
+      <!-- Since the logo will be in its own block we wrap it with div -->
+      <div class="header__logo-box">
+        <!--We used "--" because logo-box is an element of the header block. same goes for the logo of the image class-->
+        <img src="img/logo-white.png" alt="Logo" class="header__logo" />
+      </div>
+      <div class="header__text-box">
+        <!--We put the two line in heading h1 for better SEO optimization-->
+        <h1 class="heading-primary">
+          <!--We can consider the "heading-primary" and a standalone block-->
+          <span class="heading-primary--main">Outdoors</span>
+          <span class="heading-primary--sub">Is where life happens</span>
+          <!--For the "heading-primary-main" and the "heading-primary-sub" we consider them as a modifier for the "heading-primary" block because they prove a slight change for the main block so thery are not an element so we use "--"-->
+        </h1>
+        <a href="#" class="btn btn--white btn--animated">Discover our tours</a>
+        <!--Here the btn is a standalone block and the "white and animated" they are modifiers for the btn and not elements of that btn block class-->
+      </div>
+    </header>
+  </body>
 </html>

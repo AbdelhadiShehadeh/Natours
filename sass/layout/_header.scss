@@ -1,0 +1,36 @@
+.header {
+  position: relative;
+  height: 95vh;
+  background-image: linear-gradient(
+      to bottom right,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url("../img/hero.jpg");
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /* This works that all other points are relative to the first point in (x , y) co-ordinates */
+  /* We used viewport height (75vh) to keep our website responsive!!! */
+
+  &__logo {
+    /*The wdith will be automatically adjusted according to our set height and it works the other way around */
+    height: 3.5rem;
+  }
+
+  //The '&' sign is used for nesting elements so in this case the '&' = .header
+  &__logo-box {
+    position: absolute;
+    /* The position of the element is absolute and should be absloute to its parent element and we do that by assigning the position attribute in the parent element to relative. In this case the parent element is the header */
+    top: 4rem;
+    left: 4rem;
+  }
+  &__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    /* Since our button is an inline-block it will be treated as a text so "text-align" property will align the button to the center of the text-box element */
+  }
+}
