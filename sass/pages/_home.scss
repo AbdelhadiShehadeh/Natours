@@ -1,0 +1,6 @@
+.section-about {
+  background-color: $color-gray-light-1;
+  padding: 25rem;
+  margin-top: -20vh;
+  //by looking at our clip-path proprity and our total heading height we can deduce how much margin we will need in negative to hide the white space.
+}

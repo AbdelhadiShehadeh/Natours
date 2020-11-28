@@ -1,0 +1,36 @@
+.composition {
+  position: relative;
+  &__photo {
+    position: absolute;
+    width: 55%;
+    border-radius: 0.2rem;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.4);
+    z-index: 0;
+    transition: all 0.2s;
+    outline-offset: 2rem;
+    &--p1 {
+      left: 0;
+      top: -2rem;
+    }
+    &--p2 {
+      right: 0;
+      top: 2rem;
+    }
+    &--p3 {
+      left: 20%;
+      top: 10rem;
+    }
+    &:hover {
+      outline: 1.5rem solid $color-primary;
+      //The outline properity works just like the border however we can specify more properities to it like in this case we used outline-offset on the parent element.
+      transform: scale(1.05) translateY(-0.5rem);
+      box-shadow: 0 2.5rem 4rem rgba($color-black, 0.5);
+      z-index: 1;
+    }
+  }
+  &:hover &__photo:not(:hover) {
+    //composition:hover composition__photo:not(:hover){
+    //we can't put this selector nested inside the 'composition__photo becaue the not works only with children so the children of the composition that have the class compositon__photo and that are not hovered should be selected.
+    transform: scale(0.95);
+  }
+}

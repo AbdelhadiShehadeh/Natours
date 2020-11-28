@@ -9,6 +9,7 @@
 html {
   //We can consider the 'font-size' properity to be a typography related but since this is our base font-size and it control our overall units on the website its better to be considered as a base proprity.
   font-size: 62.5%;
+  //62.6 = 1rem which if the user have the default browser font size will be equal to 10 and if not all of our font-size will be changed accordingly.
   /*Can use 0.625rem instead of percentage here in both cases it will be relative to the browser default declaration */
 }
 
