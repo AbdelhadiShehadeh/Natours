@@ -1,0 +1,27 @@
+.feature-box {
+  background-color: rgba($color-white, 0.8);
+  //opacity = 80% means that u can see 80% of the color and the remaining value "20%" is transparent.
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 0.3rem;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+  transition: transform 0.3s;
+  &__icon {
+    //since we used the font-icon pack these icons can be treated as fonts('so all the font properities can be applied to this element like the background-clip with the text decleration')
+    font-size: 6rem;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    background-image: linear-gradient(
+      to right,
+      $color-primary-light,
+      $color-primary-dark
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  &:hover {
+    transform: translateY(-1.5rem) scale(1.03);
+  }
+}

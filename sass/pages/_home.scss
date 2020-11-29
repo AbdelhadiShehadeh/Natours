@@ -4,3 +4,19 @@
   margin-top: -20vh;
   //by looking at our clip-path proprity and our total heading height we can deduce how much margin we will need in negative to hide the white space.
 }
+.section-features {
+  padding: 20rem 0;
+  background-image: linear-gradient(
+      to bottom right,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url("/img/nat-4.jpg");
+  background-size: cover;
+  margin-top: -12rem;
+  transform: skewY(-7deg);
+  & > * {
+    //'.section-features *'This will select all the children and the grand children of the 'section-fetures' while '.section-featurs > *' will select only the direct children of the 'section-features'.
+    transform: skewY(7deg);
+  }
+}

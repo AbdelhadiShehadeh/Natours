@@ -9,7 +9,8 @@
       rel="stylesheet"
     />
 
-    <!-- <link rel="stylesheet" href="css/icon-font.css"> -->
+    <link rel="stylesheet" href="css/icon-font.css" />
+    <!--Icont font pack from linea.io-->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
 
@@ -80,6 +81,65 @@
                 alt="photo 3"
                 class="composition__photo composition__photo--p3"
               />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section-features">
+        <div class="row">
+          <div class="col-1-of-4">
+            <div class="feature-box">
+              <!--
+              Having a div inside the main column div('col-1-of-4') is better in this case becase:
+                1-Most important: in this case the feature-box will be a child of the main column.
+                2-We need another class enable to animate it an not effect our main grid classes.
+                3-Having another div will be easier for the code to be maintainable and scalable
+                4-This feature box component will be reusable.
+              -->
+              <i class="feature-box__icon icon-basic-world"></i>
+              <h3 class="heading-tertiary u-margin-bottom-small">
+                Explore the world
+              </h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
+                vitae illum et deserunt
+              </p>
+            </div>
+          </div>
+          <div class="col-1-of-4">
+            <div class="feature-box">
+              <i class="feature-box__icon icon-basic-compass"></i>
+              <h3 class="heading-tertiary u-margin-bottom-small">
+                Meet nature
+              </h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
+                vitae illum et deserunt
+              </p>
+            </div>
+          </div>
+          <div class="col-1-of-4">
+            <div class="feature-box">
+              <i class="feature-box__icon icon-basic-map"></i>
+              <h3 class="heading-tertiary u-margin-bottom-small">
+                Find your way
+              </h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
+                vitae illum et deserunt
+              </p>
+            </div>
+          </div>
+          <div class="col-1-of-4">
+            <div class="feature-box">
+              <i class="feature-box__icon icon-basic-heart"></i>
+              <h3 class="heading-tertiary u-margin-bottom-small">
+                Live a healthier life
+              </h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
+                vitae illum et deserunt
+              </p>
             </div>
           </div>
         </div>
