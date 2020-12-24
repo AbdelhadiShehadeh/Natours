@@ -15,8 +15,8 @@ body {
   /*
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  This properity is used when we need to hide the backface ('backside') of the animated element if the animation will show it.
-  example is when we rotate an element. Using "Can I use" website it says that the backward visibility properity is not supported in Safari so we need to use the -webkit- option.
+  This properity is used when we need to hide the backface ('backside') of the animated element that will show on animation.example is when we rotate an element. 
+  Using "Can I use" website it says that the backward visibility properity is not supported in Safari so we need to use the -webkit- option.
   */
   margin-bottom: 6rem;
   &--main {

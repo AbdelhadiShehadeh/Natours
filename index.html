@@ -90,7 +90,7 @@
           <div class="col-1-of-4">
             <div class="feature-box">
               <!--
-              Having a div inside the main column div('col-1-of-4') is better in this case becase:
+              Having a div inside the main column div('col-1-of-4') is better in this case because:
                 1-Most important: in this case the feature-box will be a child of the main column.
                 2-We need another class enable to animate it an not effect our main grid classes.
                 3-Having another div will be easier for the code to be maintainable and scalable
@@ -142,6 +142,116 @@
               </p>
             </div>
           </div>
+        </div>
+      </section>
+      <section class="section-tours">
+        <div class="u-center-text u-margin-bottom-big">
+          <h2 class="heading-secondary">Most popular tours</h2>
+        </div>
+        <div class="row">
+          <div class="col-1-of-3">
+            <div class="card">
+              <!--Two divs each responsible for a differenet side of the card. and then we stack them over each other using positioning and onHover we rotate.-->
+              <div class="card__side card__side--front">
+                <div class="card__picture card__picture--1">
+                  <!--According to BEM methodolgy an element is always a part of a block and can't be a part of another element.Elements can't be nested inside each other.This is why we considered the 'Picture' as part of the block 'card' and not as part of the element 'side'.-->
+                  &nbsp;
+                  <!--the "&nbsp" is an html special element where it would just add a space if there is nothing in the HTML element.-->
+                </div>
+                <h4 class="card__heading">
+                  <span class="card__heading-span card__heading-span--1">
+                    <!--According to our design we are going to split this heading into multiple lines and we gonna use the CSS properity "box-decoration-break" thats why we wrapped the heading in a span element. Since we have multiple different version of this element on different cards we added the modifier "1".-->
+                    <!--Here 'heading-span' is called a block modifier to the original block 'card', we did that since we can't nest elements in the BEM  methodology and this is not a modifier. So we consider it as a block modifier. so basically here it modify the span part of the heading of the block 'card'.-->
+                    <!--NOTE:in BEM you can add to the block a modifier name followed by a modifier value. so its "block-name--modifier-name--modifier--value".-->
+                    The Sea Explorer</span
+                  >
+                </h4>
+                <div class="card__details">
+                  <ul>
+                    <li>3 day tour</li>
+                    <li>Up to 30 people</li>
+                    <li>2 tour guides</li>
+                    <li>Sleep in cozy hotels</li>
+                    <li>Difficulity: easy</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="card__side card__side--back card__side--back--1">
+                <div class="card__cta">
+                  <!--cta: call to action-->
+                  <div class="card__price-box">
+                    <!--Since both the 'only' and the 'value' have some shared CSS properities we just wrapped both of them into a common div.-->
+                    <p class="card__price-only">Only</p>
+                    <p class="card__price-value">$297</p>
+                  </div>
+                  <a href="#" class="btn btn--white">Book now!</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-1-of-3">
+            <div class="card">
+              <div class="card__side card__side--front">
+                <div class="card__picture card__picture--2">&nbsp;</div>
+                <h4 class="card__heading">
+                  <span class="card__heading-span card__heading-span--2"
+                    >The Forest Hiker</span
+                  >
+                </h4>
+                <div class="card__details">
+                  <ul>
+                    <li>7 day tour</li>
+                    <li>Up to 40 people</li>
+                    <li>6 tour guides</li>
+                    <li>Sleep in provided tents</li>
+                    <li>Difficulity: medium</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="card__side card__side--back card__side--back--2">
+                <div class="card__cta">
+                  <div class="card__price-box">
+                    <p class="card__price-only">Only</p>
+                    <p class="card__price-value">$497</p>
+                  </div>
+                  <a href="#" class="btn btn--white">Book now!</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-1-of-3">
+            <div class="card">
+              <div class="card__side card__side--front">
+                <div class="card__picture card__picture--3">&nbsp;</div>
+                <h4 class="card__heading">
+                  <span class="card__heading-span card__heading-span--3"
+                    >The Snow Avdenturer</span
+                  >
+                </h4>
+                <div class="card__details">
+                  <ul>
+                    <li>5 day tour</li>
+                    <li>Up to 15 people</li>
+                    <li>3 tour guides</li>
+                    <li>Sleep in provided tents</li>
+                    <li>Difficulity: hard</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="card__side card__side--back card__side--back--3">
+                <div class="card__cta">
+                  <div class="card__price-box">
+                    <p class="card__price-only">Only</p>
+                    <p class="card__price-value">$897</p>
+                  </div>
+                  <a href="#" class="btn btn--white">Book now!</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="u-center-text u-margin-top-huge">
+          <a href="#" class="btn btn--green">Dicover all tours</a>
         </div>
       </section>
     </main>

@@ -9,6 +9,7 @@
     url("../img/hero.jpg");
   background-size: cover;
   background-position: top;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   /* This works that all other points are relative to the first point in (x , y) co-ordinates */
   /* We used viewport height (75vh) to keep our website responsive!!! */

@@ -3,7 +3,7 @@
   //1140px is the standard container width size that is being used.
   //If the viewport width is more than 1140px the row will occupy only 1140px however when our viewport width is less than 1140px the row will occupty the 100% of the viewport width.
   margin: 0 auto;
-  //Used to center block elements in the container by defining the top and bottom margin to 0 and left right margin to auto which mean they will be equal.(100% / 2 = 50%).
+  //Used to center block elements in the container('another block element') by defining the top and bottom margin to 0 and left right margin to auto which mean they will be equal.(100% / 2 = 50%).
   @include clearfix;
   [class^="col-"] {
     /*

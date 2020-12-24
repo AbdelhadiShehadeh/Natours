@@ -1,0 +1,171 @@
+.card {
+  perspective: 150rem;
+  //Perspective defines how far the object is away from the user. so the lower the value the more the object will be closer to the user secreen.
+  //The perspective properity will give a much nicer animation for the rotation on the card.you will need to keep playing with the properity value till you find the right one for you case. In this case 150 rem was what we needed.
+  //perspective needs to be applied on the parent element.
+  position: relative;
+  height: 52rem;
+  //The card lost its height because the element collapsed "the card element is taken out of its natural flow when we specified the positioning of the side cards".
+  //So we need to specify the height of the card manually and to be equal to the height of the children's side cards or the opposite "So specify the parent's height and children's should be at height: 100%".
+  &__side {
+    position: absolute;
+    top: 0;
+    left: 0;
+    //We use the positioning techinique to stack them over each other.
+    height: 52rem;
+    transition: all 0.8s ease;
+    width: 100%;
+    overflow: hidden;
+    //When we added a background image it overflowed the broder-radius and hide it. So this properity will hide any overflow that may happen.
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 0.3rem;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+    &--front {
+      background-color: white;
+    }
+    &--back {
+      transform: rotateY(180deg);
+      //Since this will be the backside of the element we need to rotate it so the text will not be flipped on hover by the user.("It will be flipped before the hover effect when the user hover the text will flip again making it back to its normal state.
+      &--1 {
+        background-image: linear-gradient(
+          to bottom right,
+          $color-secondary-light,
+          $color-secondary-dark
+        );
+      }
+      &--2 {
+        background-image: linear-gradient(
+          to bottom right,
+          $color-primary-light,
+          $color-primary-dark
+        );
+      }
+      &--3 {
+        background-image: linear-gradient(
+          to bottom right,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        );
+      }
+    }
+  }
+  &:hover &__side--front {
+    //.card:hover .card__side "So the hover the card component the effect will take place where the front will rotate 180deg in the opposite direction and the back side will go back to its position as not rotated('back to 0deg rotation')".
+    transform: rotateY(-180deg);
+  }
+  &:hover &__side--back {
+    transform: rotateY(0);
+    //since this is already rotated by (180deg). on hover it needs to be rotated back to its original posiion and the "front-side" to be rotated (180deg) behind it."So we basically flipped the sides".
+  }
+  &__picture {
+    background-size: cover;
+    height: 23rem;
+    background-blend-mode: screen;
+    //This blend the background images ('In this case a linear gradient and a regular image') with each other according to different options.
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    //BEST PRACTICE: To use the prefix before the actual proeprty when defining them.
+    &--1 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        ),
+        url(/img/nat-5.jpg);
+    }
+    &--2 {
+      background-image: linear-gradient(
+          to bottom right,
+          $color-primary-light,
+          $color-primary-dark
+        ),
+        url(/img/nat-6.jpg);
+    }
+    &--3 {
+      background-image: linear-gradient(
+          to bottom right,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        ),
+        url(/img/nat-7.jpg);
+    }
+  }
+  &__heading {
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: $color-white;
+    text-align: right;
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    width: 75%;
+  }
+  &__heading-span {
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    //if the element targeted is split into multiple lines then the element properities will be applies to each line.In this element "card__heading-span" only have the "padding" properity in which it will get applied to all the lines seperatly.
+    //NOTE: In order ot use the 'box-decoration-break' properity the targeted element in the HTML that will get split up into lines will need to be wrapped. Usually with a 'span'.
+    padding: 1rem 1.5rem;
+    &--1 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-secondary-light, 0.85),
+        rgba($color-secondary-dark, 0.85)
+      );
+    }
+    &--2 {
+      background-image: linear-gradient(
+        to bottom right,
+        rgba($color-primary-light, 0.85),
+        rgba($color-primary-dark, 0.85)
+      );
+    }
+    &--3 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-tertiary-light, 0.85),
+        rgba($color-tertiary-light, 0.85)
+      );
+    }
+  }
+  &__details {
+    padding: 3rem;
+    ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto;
+      li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem;
+        &:not(:last-child) {
+          border-bottom: 1px solid $color-gray-light-2;
+        }
+      }
+    }
+  }
+  &__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+  }
+  &__price-box {
+    text-align: center;
+    color: $color-white;
+    margin-bottom: 8rem;
+  }
+  &__price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+  &__price-value {
+    font-size: 6rem;
+    font-weight: 100;
+    //DESIGN TIP: When having a large font-size its better looking to set font-weight to low value.
+  }
+}
