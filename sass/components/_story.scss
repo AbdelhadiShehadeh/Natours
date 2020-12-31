@@ -1,0 +1,62 @@
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
+  background-color: rgba($color-white, 0.6);
+  //we can't set the opacity of the whole card to be transaprent. so we need to have the background color only set to be transparent. Otherwise the card details (e.x: text , image) will be transparent too.
+  border-radius: 0.3rem;
+  padding: 6rem;
+  padding-left: 9rem;
+  //after adding the transfom properity on the shape. The shape got shifted to the left more to fix this we incresed the padding on the left from 6 to 9rems (+3 rem) which is the exact translate amount.
+  font-size: $default-font-size;
+  transform: skewX(-12deg);
+  & > * {
+    transform: skewX(12deg);
+    //Since transform properity is already applied to the 'shape' element it will take precedence over this one ("because of higher specificity"), so we needed to add the properity again next to the transform value.
+  }
+  &__shape {
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+    //'shape-outside' properity specifies how the inline element of the shape should be wrapped.In our example it specifies how the text beside the image will be wrapped around it.It's option is pretty close to the 'clip-path' properity.
+    //NOTE: the 'shape-outside' doesn't specify the shape of the image itself only the around element.
+    //In the circle option its specified as follows (radius at center(x,y) coordiantes).
+    //In order to apply the properity the element need to have the width, the height specified and it should be floated.
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    //TIP: if the element is floatted the best way is to use 'transofrm:translate' rather than using 'padding' or 'margin' on it.
+    transform: translateX(-3rem) skewX(12deg);
+    position: relative;
+  }
+  &__img {
+    height: 100%;
+    //It will take the exact same height of its parent.In this case its parent is 'div.card__shape' and its defined height is '15rem'. So the image height will be 15rem(150px).
+    transform: translateX(-4rem) scale(1.4);
+    transition: all 0.5s;
+  }
+  &__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    //translate(x-coordinate , y-coordinate).
+    color: $color-white;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.5s;
+  }
+  &:hover &__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  &:hover &__img {
+    transform: translateX(-4rem) scale(1);
+    filter: blur(3px) brightness(80%);
+    //This will apply different filters to the element ("This case on the image") there is more than just blur and brightness effects.
+    //brightness: if the value is less than 100% its will darker and if the value is more than 100% it will be brighter.
+  }
+}

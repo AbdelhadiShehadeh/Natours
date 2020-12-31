@@ -1,0 +1,20 @@
+.bg-video {
+  position: absolute;
+  //We sat the whole "section-stories" to position: relative in the "home.scss" page.
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  //width and height will take the value of thier parent tag according to the html structure.
+  opacity: 0.15;
+  z-index: -1;
+  &__content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    //This works exactly like the CSS properity "background-size". It also works with images.("So basically any HTLML element.
+    //cover: It will fit the parent element while maintaining in this case the video's aspect ratio. if the video extends beyond the parent element it will be clipped.
+    //fill: It's primary focus is on filling the parent width and height more than focusing on maintaining its aspect ratio, it also will clip in this case the video if needed.
+    //contain: It will fit its parent's width and height but without clipping if needed.
+  }
+}

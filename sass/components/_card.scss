@@ -51,7 +51,7 @@
     }
   }
   &:hover &__side--front {
-    //.card:hover .card__side "So the hover the card component the effect will take place where the front will rotate 180deg in the opposite direction and the back side will go back to its position as not rotated('back to 0deg rotation')".
+    //'.card:hover .card__side--front' means when we hover over the card componenet the 'card__side--front' class will get animated.In this case "Rotation".
     transform: rotateY(-180deg);
   }
   &:hover &__side--back {

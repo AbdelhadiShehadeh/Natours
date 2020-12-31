@@ -254,6 +254,74 @@
           <a href="#" class="btn btn--green">Dicover all tours</a>
         </div>
       </section>
+      <section class="section-stories">
+        <div class="bg-video">
+          <!--The video component can be used multiple times throughtout our website so we consider it as standalone block and we implemnted it as a seperate component from the "section-stories".-->
+          <video class="bg-video__content" autoplay muted loop>
+            <!--after the class name we added attributes which are called "Controls". There are more controls available than what we used.-->
+            <source src="img/video.mp4" type="video/mp4" />
+            <source src="img/video.webm" type="video/webm" />
+            <!--We use multiple file format for browsers compatability.-->
+            Your browser is not supported!
+            <!--This text will appear if the user's browser doesn't support the video tag.-->
+          </video>
+        </div>
+        <div class="u-center-text u-margin-bottom-big">
+          <h2 class="heading-secondary">We make people genuinely happy</h2>
+        </div>
+        <div class="row">
+          <div class="story">
+            <figure class="story__shape">
+              <!--We used the figure element because it will be easier to implement the figure caption inside the figure element.-->
+              <img
+                src="img/nat-8.jpg"
+                alt="person on a tour"
+                class="story__img"
+              />
+              <figcaption class="story__caption">Mary Smith</figcaption>
+            </figure>
+            <div class="story__text">
+              <h3 class="heading-tertiary u-margin-bottom-small">
+                I had the best week ever with my family.
+              </h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla,
+                porro velit! Alias amet cumque, nulla rerum nam quos totam
+                optio! Perferendis ut qui enim magni fugit veniam provident
+                deserunt ullam enim magni fugit veniam provident deserunt ullam
+                fugit veniam provident deserunt ullam.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="story">
+            <figure class="story__shape">
+              <img
+                src="img/nat-9.jpg"
+                alt="person on a tour"
+                class="story__img"
+              />
+              <figcaption class="story__caption">Jack Wilson</figcaption>
+            </figure>
+            <div class="story__text">
+              <h3 class="heading-tertiary u-margin-bottom-small">
+                WOW! My life is completely different now
+              </h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla,
+                porro velit! Alias amet cumque, nulla rerum nam quos totam
+                optio! Perferendis ut qui enim magni fugit veniam provident
+                deserunt ullam enim magni fugit veniam provident deserunt ullam
+                fugit veniam provident deserunt ullam.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="u-center-text u-maring-top-huge">
+          <a href="#" class="btn-text">Read all stories &rarr;</a>
+        </div>
+      </section>
     </main>
     <!--Testing our grid layout
        <section class="grid-test">
