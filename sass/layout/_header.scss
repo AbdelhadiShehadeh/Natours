@@ -22,7 +22,7 @@
   //The '&' sign is used for nesting elements so in this case the '&' = .header
   &__logo-box {
     position: absolute;
-    /* The position of the element is absolute and should be absloute to its parent element and we do that by assigning the position attribute in the parent element to relative. In this case the parent element is the header */
+    /* The position of the element is absolute and should be relative to its parent element and we do that by assigning the position attribute in the parent element to relative. In this case the parent element is the header */
     top: 4rem;
     left: 4rem;
   }

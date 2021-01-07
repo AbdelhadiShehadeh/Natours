@@ -62,6 +62,7 @@
               sequi cumque maxime illum cupiditate sed iusto in minima,
             </p>
             <a href="#" class="btn-text">Learn more &rarr;</a>
+            <!--rarr: right arrow-->
             <!--"&rarr;" is an html element that can be used this one is a symbol for the arrow-->
           </div>
           <div class="col-1-of-2">
@@ -156,7 +157,8 @@
                 <div class="card__picture card__picture--1">
                   <!--According to BEM methodolgy an element is always a part of a block and can't be a part of another element.Elements can't be nested inside each other.This is why we considered the 'Picture' as part of the block 'card' and not as part of the element 'side'.-->
                   &nbsp;
-                  <!--the "&nbsp" is an html special element where it would just add a space if there is nothing in the HTML element.-->
+                  <!--nbsp: non-breking space-->
+                  <!--the "&nbsp" is an html special element where it would just add a space if there is nothing in the HTML element and won't break into a new line.-->
                 </div>
                 <h4 class="card__heading">
                   <span class="card__heading-span card__heading-span--1">
@@ -318,8 +320,76 @@
             </div>
           </div>
         </div>
-        <div class="u-center-text u-maring-top-huge">
+        <div class="u-center-text u-margin-top-huge">
           <a href="#" class="btn-text">Read all stories &rarr;</a>
+        </div>
+      </section>
+      <section class="section-book">
+        <div class="row">
+          <div class="book">
+            <div class="book__form">
+              <div class="u-margin-bottom-medium">
+                <h2 class="heading-secondary">Start booking now</h2>
+              </div>
+              <form action="#" class="form" autocomplete="off">
+                <!--The 'action' attribute is used to tell html where to send the form information onSubmit.-->
+                <div class="form__group">
+                  <input
+                    type="text"
+                    class="form__input"
+                    placeholder="Full name"
+                    id="name"
+                    required
+                  />
+                  <!--'placeholder' is used to show a text inside the input box-->
+                  <!--'id' is used to link the input field to the label-->
+                  <label for="name" class="form__label">Full name</label>
+                </div>
+                <div class="form__group">
+                  <input
+                    type="email"
+                    class="form__input"
+                    placeholder="Email address"
+                    id="email"
+                    required
+                  />
+                  <label for="email" class="form__label">Email address</label>
+                </div>
+                <div class="form__group u-margin-bottom-medium">
+                  <div class="form__radio-group">
+                    <input
+                      type="radio"
+                      class="form__radio-input"
+                      id="small"
+                      name="size"
+                    />
+                    <!--All the radio elements with the same 'name' attribuite will be limited to one selection("one input").-->
+                    <label for="small" class="form__radio-label">
+                      <span class="form__radio-button"></span>
+                      <!--In CSS we can't modify the radio buttons. So the trick that we are gonna use is by styling a 'span' element inside the 'label' and hidding the original input field and whenever the 'label' is pressed the radio will be selected.("since the "input" and the "label" are connected").-->
+                      Small tour group
+                    </label>
+                  </div>
+                  <div class="form__radio-group">
+                    <input
+                      type="radio"
+                      class="form__radio-input"
+                      id="large"
+                      name="size"
+                    />
+                    <label for="large" class="form__radio-label">
+                      <span class="form__radio-button"></span>
+                      Large tour group
+                    </label>
+                  </div>
+                </div>
+                <div class="form__group">
+                  <button class="btn btn--green">Next step &rarr;</button>
+                  <!--We used 'button' here because the 'form' element will actually need a 'button' for the form information to be checked then submitted to the server("It won't work with a regular ancher tag.").-->
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
       </section>
     </main>

@@ -1,0 +1,106 @@
+.form {
+  &__group {
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+  &__input {
+    display: block;
+    width: 90%;
+    font-family: inherit;
+    color: inherit;
+    //By default the 'form' fields don't inherit the font properties like 'font-family' and 'color'.
+    font-size: 1.5rem;
+    padding: 1.5rem 2rem;
+    //DESIGN TIP: We give the input field a little more padding from the left and right than we give the top and the bottom.
+    border-radius: 0.2rem;
+    background-color: rgba($color-white, 0.5);
+    border: none;
+    border-bottom: 3px solid transparent;
+    //We added the 'border-bottom' here as a transparent so by default the input field will have the '3px' and won't mess the bottom margin onFocus.
+    transition: all 0.3s;
+    //The transition properity here will give a smooth fade in and fade out of the 'border-bottom' when appears onFocus.
+    &:focus {
+      //For accessibility ("In this case for people who navigate the website using only thier keyboards we need a way to tell them that they are at the input field"), thats why we added the 'box-shadow' and the 'margin-bottom'.
+      outline: none;
+      //'outline' in this case is the blue border thats around the input field.
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+      border-bottom: 3px solid $color-primary;
+      &:invalid {
+        //As long as the requirements for the type of the  input data is not met the "invalid" pseduo class will be active.for ex: in the email field it should contain the "@" sign.
+        //'form__input:focus:invalid': so when the input field in onFocus and the input is invalid according to its type apply these css properities.
+        border-bottom: 3px solid $color-secondary-dark;
+      }
+    }
+    &::placeholder {
+      //These CSS elements are called Pseduo-elements. others like ":focus or :active , etc" are called pseduo-classes.
+      color: $color-gray-dark-2;
+    }
+  }
+  &__label {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: 0.7rem;
+    transition: all 0.3s;
+  }
+  &__input:placeholder-shown + &__label {
+    //"&__input:placeholder-shown &__label" This won't work because the label is not a direct child of the 'input' html element.
+    // +: This is an adjacent sibling selector. So it will select the element that is right next to it.("So the label should be right after the input in the html file for this pseduo class to work").
+    //~: This a general sibiling selector. So it will select all the element sibilings.
+    //':placeholder-shown': The following css properity will be applied when the placeholder tag is being visible on the screen.("means the input box has not been written in it yet").
+    //So this means when the place-holder is being visibile on the screen apply these properities to the label element.
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+    //With the 'transition' properity on the 'label' the opacity("from 0 to 100"),visibility("from hidden to visible") and transform("going from -4rem to its original position") will be animated this will happen when the 'placeholder' of the input field is no longer visibile.("The placeholder will no longer be visible when we write in the field").
+  }
+  &__radio-group {
+    display: inline-block;
+    width: 49%;
+  }
+  &__radio-input {
+    display: none;
+  }
+  &__radio-label {
+    font-size: $default-font-size;
+    cursor: pointer;
+    //So whenever we hover over the 'label' it will help people know that its clickable.
+    position: relative;
+    padding-left: 4.5rem;
+  }
+  &__radio-button {
+    display: inline-block;
+    height: 3rem;
+    width: 3rem;
+    border: 5px solid $color-primary;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: -0.4rem;
+    &::after {
+      //Here in the '::after' pseduo element we are styling the smaller circle that will show onSelect.
+      content: "";
+      display: inline-block;
+      border-radius: 50%;
+      height: 1.3rem;
+      width: 1.3rem;
+      position: absolute;
+      //In this case the element ("which is the smaller circle") will be positioned relative to its parent postition("which is the bigger circle, the parent element is already defined with 'position: absolute.'.") and not the whole 'label' position("form__radio-button").
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      //Its position will be in the middle of the bigger always shown circle.
+      background-color: $color-primary;
+      opacity: 0;
+      //Its initial state will be hidden with 'opacity: 0'.
+      transition: opacity 0.2s;
+      //This will only apply transitions on the seleceted properity.("in this case its the 'opacity'").
+    }
+  }
+  &__radio-input:checked + &__radio-label &__radio-button::after {
+    //The ':checked' pseduo class is available for radio buttons and checkboxes.
+    opacity: 1;
+  }
+}

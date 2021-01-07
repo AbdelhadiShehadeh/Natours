@@ -1,4 +1,6 @@
 .btn {
+  &,
+  //This is added for the regular linke to work with buttons, since the buttons doesn't have the ':link' and the ':hover' states.
   &:link,
   &:hover {
     font-size: $default-font-size;
@@ -11,6 +13,9 @@
     padding: 1.5rem 4rem;
     border-radius: 10rem;
     transition: all 0.2s;
+    //The following CSS properities are added for the buttons.("To remove thier default 'border' and to change to a more appropriate cursor.
+    border: none;
+    cursor: pointer;
   }
 
   &::after {
@@ -46,7 +51,10 @@
     }
   }
 
-  &:active {
+  &:active,
+  &:focus {
+    //We added the ':focus' pseduo class here for better accessability.
+    outline: none;
     transform: translateY(-0.1rem);
     /* This translate will happen in relation to the main btn position and not the hovered position. */
     box-shadow: 0rem 1rem 0.5rem rgba($color-black, 0.2);

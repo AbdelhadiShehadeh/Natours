@@ -29,3 +29,31 @@
   position: relative;
   padding: 15rem 0;
 }
+.section-book {
+  padding: 15rem 0;
+  background-image: linear-gradient(
+    to right bottom,
+    $color-primary-light,
+    $color-primary-dark
+  );
+}
+.book {
+  //This won't be a reusable componenet throughout our website thats why we styled it in this page.("These styles will only be tied to this page").however, the form will be a standalone component.
+  background-image: linear-gradient(
+      105deg,
+      rgba($color-white, 0.9) 0%,
+      rgba($color-white, 0.9) 50%,
+      transparent 50%
+    ),
+    url(/img/nat-10.jpg);
+  //The degree value is takin from the center of the image ("So its 105deg from the bottom center of the image to the top of the image"). then we specify that at 0% to 50% we want the 'color-white' with '.9 opacity' after that from 50% to the end we want the gradient to be 'Transparent'. all the values are relative to the '105deg'.
+  background-size: cover;
+  border-radius: 0.3rem;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
+  height: 50rem;
+  &__form {
+    //This is not the actual form but this container is for the positioning of the form specifically for this page.
+    width: 50%;
+    padding: 6rem;
+  }
+}
