@@ -1,3 +1,4 @@
+//Using '_' before the sass files it just let the compiler knows that we are working with partial files, so when processed the compiler knows not to create seperate stylesheet for them.
 @import "abstracts/variables";
 @import "abstracts/mixins";
 
@@ -16,5 +17,6 @@
 
 @import "layout/header";
 @import "layout/grid";
+@import "layout/footer";
 
 @import "pages/home";

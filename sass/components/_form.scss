@@ -62,6 +62,8 @@
   }
   &__radio-input {
     display: none;
+    // opacity: 0;
+    //ACCESSABILITY TIP: 'display: none' will not make the '__radio-input' accessabile via the keyboard since the brwoser reads it as 'hidden' but with 'opacity: 0' the broweser will read it and the user will be able to select it however he won't be able to see that he selected anything and for that its better to have some other properity to tell the user that he is currently selecting the '__radio-input'.For example we added a color change in the border. ("check the next comment for the example").
   }
   &__radio-label {
     font-size: $default-font-size;
@@ -70,6 +72,12 @@
     position: relative;
     padding-left: 4.5rem;
   }
+  //ACCESSABILITY TIP CONTINUED ("EXAMPLE").
+  /*
+  &__radio-input:focus + &__radio-label &__radio-button {
+    border: 5px solid black;
+  }
+  */
   &__radio-button {
     display: inline-block;
     height: 3rem;

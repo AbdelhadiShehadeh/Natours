@@ -1,0 +1,57 @@
+//We put all the footer styling in this page becaue the footer will be reusable throughout all of our project "propably in every page of the website".
+.footer {
+  color: $color-gray-light-1;
+  background-color: $color-gray-dark-3;
+  padding: 10rem 0;
+  font-size: 1.4rem;
+  &__logo-box {
+    text-align: center;
+    //'img' tags are inline elements by default so they can be treated as text when 'aliging', thats why 'text-align: center' worked.
+    //NOTE: 'Inline' elements can't contain 'block' elements inside of them.
+    margin-bottom: 8rem;
+  }
+  &__logo {
+    width: 15rem;
+    //By default the 'height' property will be 'auto' if we specified the 'width' and it works the other way around ("if we specify the 'height' the width will be specified automatically"). So there is no need to write 'hegith: auto' since it will be done automatically.
+    height: auto;
+  }
+  &__navigation {
+    border-top: 1px solid $color-gray-dark;
+    padding-top: 2em;
+    display: inline-block;
+  }
+  &__list {
+    list-style: none;
+  }
+  &__item {
+    display: inline-block;
+    &:not(:last-child) {
+      margin-right: 1.5rem;
+    }
+  }
+  &__link {
+    &:link,
+    &:visited {
+      color: $color-gray-light-1;
+      background-color: $color-gray-dark-3;
+      text-decoration: none;
+      text-transform: uppercase;
+      display: inline-block;
+      //'inline' elements can't be transformable. Thats why we changed the 'dispaly' properity to 'inline-block'.
+      transition: all 0.2s;
+    }
+    &:hover,
+    &:active {
+      color: $color-primary;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
+      transform: rotate(5deg) scale(1.3);
+    }
+  }
+  &__copyright {
+    border-top: 1px solid $color-gray-dark;
+    padding-top: 2em;
+    width: 87%;
+    float: right;
+    //We used the 'width' and 'float' properities to make the section start from the right of the logo. Otherwise it will start in the middle of the logo and won't be symmetrical with the 'navigation' section.
+  }
+}

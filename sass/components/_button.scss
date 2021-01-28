@@ -19,7 +19,7 @@
   }
 
   &::after {
-    /*The ::after pseduo element add a virtual element right behind the element that its targeting and its treated as its child*/
+    /*The ::after pseduo element add a virtual element right before the content of the  element that its targeting and its treated as its child*/
     /*These properities are just needed to specify the ::after pseduo element based on its parent('Targeted element') in our case .btn */
     content: "";
     /* ::after always needs a content properity even if we leaves it empty */
