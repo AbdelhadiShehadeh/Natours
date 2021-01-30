@@ -1,0 +1,160 @@
+.navigation {
+  &__checkbox {
+    display: none;
+  }
+  &__button {
+    background-color: $color-white;
+    height: 7rem;
+    width: 7rem;
+    position: fixed;
+    top: 6rem;
+    right: 6rem;
+    border-radius: 50%;
+    box-shadow: 0 1rem 3rem rgba($color-black, 0.1);
+    z-index: 2000;
+    text-align: center;
+    cursor: pointer;
+  }
+  &__background {
+    //The background mechanism that it will be hidden behind the 'navigation__button' and on the 'checkbox' being 'checked' ("basically 'onClick'") the 'background' will scale to fill the screen.
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    position: fixed;
+    top: 6.5rem;
+    right: 6.5rem;
+    background-image: radial-gradient(
+      $color-primary-light,
+      $color-primary-dark
+    );
+    //'radial-gradient' it will start on the center of the element a grow to its edges with the two colors properties that we specify ("this example the gradient will start in the center of the circle with the '$color-primary-light' and grows to the edges of the circle with the '$color-primary-dark'").
+    z-index: 1000;
+
+    transition: transform 0.6s ease-in-out;
+    //Instructor line:transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
+    //'cubic-bezier' allows you to create custom 'transition-timing-functions'.
+    /* Resources 
+    https://easings.net/
+    https://cubic-bezier.com/
+    */
+  }
+  &__nav {
+    height: 100vh;
+    opacity: 0;
+    width: 100%;
+    //'opacity: 0' and 'width: 0' So we make the list hidden and not selectable to the user.
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1500;
+    //Here we only specified the 'opacity' to be animated because we want the list("width") to instantly appear.
+    visibility: hidden;
+    transition: opacity 0.5s cubic-bezier(0.9, 0.25, 0, 0.98);
+    //Instructor line:transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  &__list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    list-style: none;
+    counter-reset: navigation-list;
+    //Implementing a 'counter' instead of 'span' before each 'a' element in the 'html' folder.
+    //'counter-reset' is where the 'counter' is being defined.
+  }
+  &__item {
+    margin: 1rem;
+  }
+  &__link {
+    &::before {
+      counter-increment: navigation-list;
+      //'counter-increment' is where we call the function and it starts to increment with each class. In this example with each 'navigation__link' class.
+      content: "0" counter(navigation-list);
+      //Here we specify the output and call the 'counter' function.
+      padding: 1.5rem;
+    }
+    &:link,
+    &:visited {
+      display: inline-block;
+      font-size: 3rem;
+      font-weight: 300;
+      color: $color-white;
+      padding: 1rem 2rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      background-image: linear-gradient(
+        120deg,
+        transparent 0%,
+        transparent 50%,
+        $color-white 50%
+      );
+      background-size: 220%;
+      //The whole animation will work by adjusting our 'background-image' to be moved out of the display and 'onHover' the 'background-image' in this case the 'linear-gradient' will be animated back with the specified degree to fill the whole 'background' with 'background-position' property.
+      //The 'background-size' will increase the size of the background by its value. So in this example the background increased to more than double its original size, so the '$color-white' is still there but now its not visible due to the background size being more than the actual element width.
+      //'background-size' can take two values the first one will be for the 'width' the second one will be for the 'height'("if we specify only the 'width' the 'height' value becomes auto"). In our example we only specified the width property.
+      transition: all 0.4s;
+    }
+    &:hover,
+    &:active {
+      color: $color-primary;
+      background-position: 100%;
+      //In this example the 'background-position' according to its percentage value will fill its element("container"). So we have the value at '100%' in the 'x-direction' so 'onHover' the 'background-image' will animate back into the screen by aligning fully to fill its actual element("container").
+      transform: translateX(1rem);
+    }
+  }
+  &__checkbox:checked ~ &__background {
+    transform: scale(80);
+  }
+  &__checkbox:checked ~ &__nav {
+    opacity: 1;
+    visibility: visible;
+  }
+  &__icon {
+    margin-top: 3.5rem;
+    position: relative;
+    &,
+    &::before,
+    &::after {
+      width: 3rem;
+      height: 2px;
+      background-color: $color-gray-dark-3;
+      display: inline-block;
+    }
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      transition: all 0.2s;
+    }
+    &::before {
+      top: -0.8rem;
+    }
+    &::after {
+      top: 0.8rem;
+    }
+  }
+  &__button:hover &__icon {
+    &::before {
+      top: -1rem;
+    }
+    &::after {
+      top: 1rem;
+    }
+  }
+  &__checkbox:checked + &__button &__icon {
+    background-color: transparent;
+    // This will make the actual line("middle line") transparent so it won't be visible.
+    &::before {
+      top: 0;
+      //So the element will go back to their initial position and with 'rotate' they will form across.
+      transform: rotate(135deg);
+      //'45 deg' will work just fine but (180 - 45) will result in a better animation.
+    }
+    &::after {
+      top: 0;
+      transform: rotate(-135deg);
+    }
+  }
+}

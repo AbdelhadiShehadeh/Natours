@@ -10,13 +10,41 @@
     />
 
     <link rel="stylesheet" href="css/icon-font.css" />
-    <!--Icont font pack from linea.io-->
+    <!--Icon font pack from linea.io-->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
 
     <title>Natours | Exciting tours for adventurous people</title>
   </head>
   <body>
+    <!--We are building the navigation using something called "checkbox hack" where you create a hidden 'checkbox input' and link it via a 'label' to the navigation logo and whenever the logo is pressed ("checkbox is checked") the navigation list will animate to the screen. and when the logo is pressed again ("checkbox is not checked") the navigation list will animate off the screen. -->
+    <div class="navigation">
+      <input type="checkbox" class="navigation__checkbox" id="navi-toggle" />
+      <label for="navi-toggle" class="navigation__button">
+        <span class="navigation__icon">&nbsp;</span>
+        <!--Using '::before' and '::after' to create three lines.-->
+      </label>
+      <div class="navigation__background">&nbsp;</div>
+      <nav class="navigation__nav">
+        <ul class="navigation__list">
+          <li class="navigation__item">
+            <a href="#" class="navigation__link">About Natours</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link">Your benefits</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link">Popular tours</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link">Stories</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link">Book now</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
     <header class="header">
       <!-- Since the logo will be in its own block we wrap it with div -->
       <div class="header__logo-box">
@@ -29,7 +57,7 @@
           <!--We can consider the "heading-primary" and a standalone block-->
           <span class="heading-primary--main">Outdoors</span>
           <span class="heading-primary--sub">Is where life happens</span>
-          <!--For the "heading-primary-main" and the "heading-primary-sub" we consider them as a modifier for the "heading-primary" block because they prove a slight change for the main block so thery are not an element so we use "--"-->
+          <!--For the "heading-primary-main" and the "heading-primary-sub" we consider them as a modifier for the "heading-primary" block because they prove a slight change for the main block so they are not an element so we use "--"-->
         </h1>
         <a href="#" class="btn btn--white btn--animated">Discover our tours</a>
         <!--Here the btn is a standalone block and the "white and animated" they are modifiers for the btn and not elements of that btn block class-->
@@ -38,8 +66,8 @@
     <main>
       <section class="section-about">
         <div class="u-center-text u-margin-bottom-big">
-          <!--u-center-text doesn't follow the BEM methodology thats because this class will be reusable throughtout the project where "u" stands for utility.-->
-          <!--We creted this class to center its children since the its child(heading-secondary) had the properity of dispaly:inline-block.-->
+          <!--u-center-text doesn't follow the BEM methodology thats because this class will be reusable throughout the project where "u" stands for utility.-->
+          <!--We created this class to center its children since the its child(heading-secondary) had the property of display:inline-block.-->
           <h2 class="heading-secondary">
             Exciting tours for adventurous people
           </h2>
@@ -428,7 +456,10 @@
               target="_blank"
               >Abdelhadi Shehadeh</a
             >. Designed by
-            <a href="https://twitter.com/jonasschmedtman" class="footer__link"
+            <a
+              href="https://twitter.com/jonasschmedtman"
+              class="footer__link"
+              target="_blank"
               >Jonas Schmedtmann</a
             >
             for his course
