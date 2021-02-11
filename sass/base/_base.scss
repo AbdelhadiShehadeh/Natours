@@ -4,17 +4,17 @@
   padding: 0px;
   margin: 0px;
   box-sizing: inherit;
-  /*The box-sizing property is not inherted by default so we need to implicitly define it to inhert so all our elements will have the box-sizing set to border-box(defined later in the html decalration) */
+  /*The box-sizing property is not inherited by default so we need to implicitly define it to inherit so all our elements will have the box-sizing set to border-box(defined later in the html declaration) */
 }
 html {
-  //We can consider the 'font-size' properity to be a typography related but since this is our base font-size and it control our overall units on the website its better to be considered as a base proprity.
+  //We can consider the 'font-size' property to be a typography related but since this is our base font-size and it control our overall units on the website its better to be considered as a base propriety.
   font-size: 62.5%;
   //62.6 = 1rem which if the user have the default browser font size will be equal to 10 and if not all of our font-size will be changed accordingly.
   /*Can use 0.625rem instead of percentage here in both cases it will be relative to the browser default declaration */
 }
 
 body {
-  //Since everthing that was in the body tag other than the box-sizing property is typography related we moved it to the typography section.
+  //Since everything that was in the body tag other than the box-sizing property is typography related we moved it to the typography section.
   box-sizing: border-box;
   /* so if we add margin it won't be added to the total width or height*/
 }

@@ -173,24 +173,24 @@
           </div>
         </div>
       </section>
-      <section class="section-tours">
+      <section class="section-tours" id="section-tours">
         <div class="u-center-text u-margin-bottom-big">
           <h2 class="heading-secondary">Most popular tours</h2>
         </div>
         <div class="row">
           <div class="col-1-of-3">
             <div class="card">
-              <!--Two divs each responsible for a differenet side of the card. and then we stack them over each other using positioning and onHover we rotate.-->
+              <!--Two divs each responsible for a different side of the card. and then we stack them over each other using positioning and onHover we rotate.-->
               <div class="card__side card__side--front">
                 <div class="card__picture card__picture--1">
-                  <!--According to BEM methodolgy an element is always a part of a block and can't be a part of another element.Elements can't be nested inside each other.This is why we considered the 'Picture' as part of the block 'card' and not as part of the element 'side'.-->
+                  <!--According to BEM methodology an element is always a part of a block and can't be a part of another element.Elements can't be nested inside each other.This is why we considered the 'Picture' as part of the block 'card' and not as part of the element 'side'.-->
                   &nbsp;
-                  <!--nbsp: non-breking space-->
+                  <!--nbsp: non-breaking space-->
                   <!--the "&nbsp" is an html special element where it would just add a space if there is nothing in the HTML element and won't break into a new line.-->
                 </div>
                 <h4 class="card__heading">
                   <span class="card__heading-span card__heading-span--1">
-                    <!--According to our design we are going to split this heading into multiple lines and we gonna use the CSS properity "box-decoration-break" thats why we wrapped the heading in a span element. Since we have multiple different version of this element on different cards we added the modifier "1".-->
+                    <!--According to our design we are going to split this heading into multiple lines and we gonna use the CSS property "box-decoration-break" thats why we wrapped the heading in a span element. Since we have multiple different version of this element on different cards we added the modifier "1".-->
                     <!--Here 'heading-span' is called a block modifier to the original block 'card', we did that since we can't nest elements in the BEM  methodology and this is not a modifier. So we consider it as a block modifier. so basically here it modify the span part of the heading of the block 'card'.-->
                     <!--NOTE:in BEM you can add to the block a modifier name followed by a modifier value. so its "block-name--modifier-name--modifier--value".-->
                     The Sea Explorer</span
@@ -202,7 +202,7 @@
                     <li>Up to 30 people</li>
                     <li>2 tour guides</li>
                     <li>Sleep in cozy hotels</li>
-                    <li>Difficulity: easy</li>
+                    <li>Difficulty: easy</li>
                   </ul>
                 </div>
               </div>
@@ -210,11 +210,11 @@
                 <div class="card__cta">
                   <!--cta: call to action-->
                   <div class="card__price-box">
-                    <!--Since both the 'only' and the 'value' have some shared CSS properities we just wrapped both of them into a common div.-->
+                    <!--Since both the 'only' and the 'value' have some shared CSS properties we just wrapped both of them into a common div.-->
                     <p class="card__price-only">Only</p>
                     <p class="card__price-value">$297</p>
                   </div>
-                  <a href="#" class="btn btn--white">Book now!</a>
+                  <a href="#popup" class="btn btn--white">Book now!</a>
                 </div>
               </div>
             </div>
@@ -234,7 +234,7 @@
                     <li>Up to 40 people</li>
                     <li>6 tour guides</li>
                     <li>Sleep in provided tents</li>
-                    <li>Difficulity: medium</li>
+                    <li>Difficulty: medium</li>
                   </ul>
                 </div>
               </div>
@@ -244,7 +244,7 @@
                     <p class="card__price-only">Only</p>
                     <p class="card__price-value">$497</p>
                   </div>
-                  <a href="#" class="btn btn--white">Book now!</a>
+                  <a href="#popup" class="btn btn--white">Book now!</a>
                 </div>
               </div>
             </div>
@@ -255,7 +255,7 @@
                 <div class="card__picture card__picture--3">&nbsp;</div>
                 <h4 class="card__heading">
                   <span class="card__heading-span card__heading-span--3"
-                    >The Snow Avdenturer</span
+                    >The Snow Adventurer</span
                   >
                 </h4>
                 <div class="card__details">
@@ -264,7 +264,7 @@
                     <li>Up to 15 people</li>
                     <li>3 tour guides</li>
                     <li>Sleep in provided tents</li>
-                    <li>Difficulity: hard</li>
+                    <li>Difficulty: hard</li>
                   </ul>
                 </div>
               </div>
@@ -274,24 +274,24 @@
                     <p class="card__price-only">Only</p>
                     <p class="card__price-value">$897</p>
                   </div>
-                  <a href="#" class="btn btn--white">Book now!</a>
+                  <a href="#popup" class="btn btn--white">Book now!</a>
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div class="u-center-text u-margin-top-huge">
-          <a href="#" class="btn btn--green">Dicover all tours</a>
+          <a href="#" class="btn btn--green">Discover all tours</a>
         </div>
       </section>
       <section class="section-stories">
         <div class="bg-video">
-          <!--The video component can be used multiple times throughtout our website so we consider it as standalone block and we implemnted it as a seperate component from the "section-stories".-->
+          <!--The video component can be used multiple times throughout our website so we consider it as standalone block and we implemented it as a separate component from the "section-stories".-->
           <video class="bg-video__content" autoplay muted loop>
             <!--after the class name we added attributes which are called "Controls". There are more controls available than what we used.-->
             <source src="img/video.mp4" type="video/mp4" />
             <source src="img/video.webm" type="video/webm" />
-            <!--We use multiple file format for browsers compatability.-->
+            <!--We use multiple file format for browsers compatibility.-->
             Your browser is not supported!
             <!--This text will appear if the user's browser doesn't support the video tag.-->
           </video>
@@ -391,10 +391,10 @@
                       id="small"
                       name="size"
                     />
-                    <!--All the radio elements with the same 'name' attribuite will be limited to one selection("one input").-->
+                    <!--All the radio elements with the same 'name' attribute will be limited to one selection("one input").-->
                     <label for="small" class="form__radio-label">
                       <span class="form__radio-button"></span>
-                      <!--In CSS we can't modify the radio buttons. So the trick that we are gonna use is by styling a 'span' element inside the 'label' and hidding the original input field and whenever the 'label' is pressed the radio will be selected.("since the "input" and the "label" are connected").-->
+                      <!--In CSS we can't modify the radio buttons. So the trick that we are gonna use is by styling a 'span' element inside the 'label' and hiding the original input field and whenever the 'label' is pressed the radio will be selected.("since the "input" and the "label" are connected").-->
                       Small tour group
                     </label>
                   </div>
@@ -413,7 +413,7 @@
                 </div>
                 <div class="form__group">
                   <button class="btn btn--green">Next step &rarr;</button>
-                  <!--We used 'button' here because the 'form' element will actually need a 'button' for the form information to be checked then submitted to the server("It won't work with a regular ancher tag.").-->
+                  <!--We used 'button' here because the 'form' element will actually need a 'button' for the form information to be checked then submitted to the server("It won't work with a regular anchor tag.").-->
                 </div>
               </form>
             </div>
@@ -467,12 +467,55 @@
               href="https://www.udemy.com/course/advanced-css-and-sass/"
               class="footer__link"
               target="_blank"
-              >Advacned CSS and SASS</a
+              >Advanced CSS and SASS</a
             >.
           </p>
         </div>
       </div>
     </footer>
+    <div class="popup" id="popup">
+      <!--IN THIS USE CASE: We declared an 'id' to have another html element ("section") links to it.("In this example we have the button 'Book now' in the 'cards' section link to this 'popup' section"). -->
+      <!--In the 'cards' section within the 'button' in the 'href' tag we specify it to 'href = #popup'.-->
+      <!--Each 'id' should have a unique name assigned to it.("since 'ids' are typically used for accessing or linking to a specific one section.")-->
+      <div class="popup__content">
+        <div class="popup__left">
+          <img src="img/nat-8.jpg" alt="Tour photo" class="popup__img" />
+          <img src="img/nat-9.jpg" alt="Tour photo" class="popup__img" />
+        </div>
+        <div class="popup__right">
+          <a href="#section-tours" class="popup__close">&times;</a>
+          <!--We added the 'id = "section-tours" in the 'section-tours' and linked it to the 'x' mark on the 'popup'.So onExit the webpage will stay on the section. and the 'target' pseudo class will no longer apply since 'popup' is no longer the target("'section-tours' is now the target and it has no 'target' pseudo class property).-->
+          <!--'&times;' is an 'x' mark built in html.-->
+          <h2 class="heading-secondary u-margin-bottom-small">
+            Start booking now
+          </h2>
+          <h3 class="heading-tertiary u-margin-bottom-small">
+            Important &ndash; Please read these terms before Booking
+            <!--
+              &ndash: (-)
+              &mdash: longer form of '&ndash';
+            -->
+          </h3>
+          <p class="popup__text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed sed
+            risus pretium quam. Aliquam sem et tortor consequat id. Volutpat
+            odio facilisis mauris sit amet massa vitae. Mi bibendum neque
+            egestas congue. Placerat orci nulla pellentesque dignissim enim sit.
+            Vitae semper quis lectus nulla at volutpat diam ut venenatis.
+            Malesuada pellentesque elit eget gravida cum sociis natoque
+            penatibus et. Proin fermentum leo vel orci porta non pulvinar neque
+            laoreet. Gravida neque convallis a cras semper. Molestie at
+            elementum eu facilisis sed odio morbi quis. Faucibus vitae aliquet
+            nec ullamcorper sit amet risus nullam eget. Nam libero justo laoreet
+            sit. Amet massa vitae tortor condimentum lacinia quis vel eros
+            donec. Sit amet facilisis magna etiam. Imperdiet sed euismod nisi
+            porta.
+          </p>
+          <a href="#" class="btn btn--green">Book now</a>
+        </div>
+      </div>
+    </div>
     <!--Testing our grid layout
        <section class="grid-test">
       <div class="row">
